@@ -3,19 +3,25 @@ package com.suny.gulimall.product;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.suny.gulimall.product.entity.BrandEntity;
 import com.suny.gulimall.product.service.BrandService;
-import org.junit.jupiter.api.Test;
+
+import lombok.extern.slf4j.Slf4j;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.List;
 
+@Slf4j
+@RunWith(SpringRunner.class)
 @SpringBootTest
-class GulimallProductApplicationTests {
+public class GulimallProductApplicationTests {
     @Autowired
     BrandService brandService;
 
     @Test
-    void contextLoads() {
+    public void contextLoads() {
 //        BrandEntity brandEntity = new BrandEntity();
 //        brandEntity.setBrandId(1L);
 //        brandEntity.setDescript("test");
@@ -27,5 +33,11 @@ class GulimallProductApplicationTests {
         System.out.println(brand_id);
 
     }
+
+    @Test
+    public void test() {
+
+    }
+
 
 }

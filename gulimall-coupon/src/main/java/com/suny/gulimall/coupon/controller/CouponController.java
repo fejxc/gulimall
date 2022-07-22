@@ -5,6 +5,8 @@ import java.util.Map;
 
 //import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,11 +28,28 @@ import com.suny.common.utils.R;
  * @date 2022-07-21 23:38:13
  */
 @RestController
+@RefreshScope
 @RequestMapping("coupon/coupon")
 public class CouponController {
     @Autowired
     private CouponService couponService;
 
+    @Value("${suny.name}")
+    private String name;
+    @Value("${suny.age}")
+    private Integer age;
+
+    @RequestMapping(value ="/test")
+    public R test() {
+        return  R.ok().put("name",name)
+                .put("age",age);
+    }
+    @RequestMapping(value ="/member/list")
+    public R memberCoupons() {
+        CouponEntity couponEntity = new CouponEntity();
+        couponEntity.setCouponName("100-10");
+        return  R.ok().put("coupons",Arrays.asList(couponEntity));
+    }
     /**
      * 列表
      */

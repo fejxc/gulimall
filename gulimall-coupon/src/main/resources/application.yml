@@ -1,11 +1,17 @@
 server:
   port: 7000
 spring:
+  application:
+    name: gulimall-coupon
   datasource:
     url: jdbc:mysql://192.168.50.213:3306/gulimall_sms?useUnicode=true&characterEncoding=utf8&autoReconnect=true&failOverReadOnly=false&useSSL=false&useAffectedRows=true
     driver-class-name: com.mysql.jdbc.Driver
     username: root
     password: mysql@gisquest.com
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.50.213:8848
 mybatis-plus:
   mapper-locations: classpath:/mapper/**/*.xml
   global-config:
