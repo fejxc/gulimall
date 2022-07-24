@@ -1,15 +1,19 @@
 package com.suny.gulimall.product.entity;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableLogic;
 import com.baomidou.mybatisplus.annotation.TableName;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
+
 import lombok.Data;
 
 /**
  * 商品三级分类
- * 
+ *
  * @author suny
  * @email 1031364436@qq.com
  * @date 2022-07-21 22:10:21
@@ -39,6 +43,7 @@ public class CategoryEntity implements Serializable {
 	/**
 	 * 是否显示[0-不显示，1显示]
 	 */
+	@TableLogic(value="1",delval ="0")
 	private Integer showStatus;
 	/**
 	 * 排序
@@ -56,5 +61,11 @@ public class CategoryEntity implements Serializable {
 	 * 商品数量
 	 */
 	private Integer productCount;
+
+    /**
+     * 表中不存在的属性  子分类
+     */
+	@TableField(exist=false)
+	private List<CategoryEntity> children;
 
 }

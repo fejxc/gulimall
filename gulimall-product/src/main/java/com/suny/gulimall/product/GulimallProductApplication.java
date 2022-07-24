@@ -11,6 +11,8 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  *  2.1 数据源
  *  2.2 配置mybatis-puls
  *
+ *
+ *
  */
 @MapperScan("com.suny.gulimall.product.dao")
 @SpringBootApplication
