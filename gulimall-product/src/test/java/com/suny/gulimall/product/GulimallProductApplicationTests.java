@@ -4,6 +4,8 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.suny.gulimall.product.entity.BrandEntity;
 import com.suny.gulimall.product.service.BrandService;
 
+import com.suny.gulimall.product.service.CategoryService;
+import com.suny.gulimall.product.service.impl.CategoryServiceImpl;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -11,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.Arrays;
 import java.util.List;
 
 @Slf4j
@@ -19,6 +22,8 @@ import java.util.List;
 public class GulimallProductApplicationTests {
     @Autowired
     BrandService brandService;
+    @Autowired
+    CategoryService categoryService;
 
     @Test
     public void contextLoads() {
@@ -36,7 +41,8 @@ public class GulimallProductApplicationTests {
 
     @Test
     public void test() {
-
+        Long[] catelogPath = categoryService.findCatelogPath(225L);
+        log.info("{}", Arrays.asList(catelogPath));
     }
 
 

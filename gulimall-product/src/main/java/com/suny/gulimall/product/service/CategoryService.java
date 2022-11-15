@@ -22,5 +22,12 @@ public interface CategoryService extends IService<CategoryEntity> {
 
 
     void removeMenuByIds(List<Long> catIds);
+
+    /**
+     * 找到cateLogId的完整路径
+     * @param catelogId
+     * @return
+     */
+    Long[] findCatelogPath(Long catelogId);
 }
 
