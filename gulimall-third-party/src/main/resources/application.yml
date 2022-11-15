@@ -1,0 +1,22 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.50.213:8848
+    alicloud:
+
+
+#      用户登录名称 gulimall@1510603946741975.onaliyun.com
+#      AccessKey ID LTAI5tJDMBx9BR8nZdQLKgy7
+#      AccessKey Secret 08bJPUCVhSSrfPPZJRmA7IQy8LYcxo
+      access-key: LTAI5tMZmcYFiqpAvQUyW28c
+      secret-key: lgsdVbT20TQdohLmlDFSrYt7IOzTLG
+      oss:
+        endpoint: oss-cn-hangzhou.aliyuncs.com
+        bucket: gulimall-suny
+
+  application:
+    name: gulimall-third-party
+
+server:
+  port: 30000
